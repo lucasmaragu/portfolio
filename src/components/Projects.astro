@@ -4,36 +4,49 @@ import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import Reacts from './icons/Reacts.astro'
+import Docker from './icons/Docker.astro'
+import Php from './icons/Php.astro'
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
+  REACT: {
+    name: "React.js",
     class: "bg-black text-white",
-    icon: NextJS,
+    icon: Reacts,
+  },
+  DOCKER: {
+    name: "Docker",
+    class: "bg-[#2796EC] text-white",
+    icon: Docker,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-[#7277AD] text-white",
+    icon: Php,
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
+    class: "bg-[#1E293B] text-white",
     icon: Tailwind,
   },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "SpotifyClone",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Clon de Spotify con React, PHP y Tailwind CSS. Incluye un CRUD de usuarios hecho en PHP con un Login y un Docker para crear un entorno de desarrollo",
+    
+    github: "https://github.com/lucasmaragu/Spotify-Login",
+    image: "/projects/soundvibes.png",
+    tags: [TAGS.REACT, TAGS.PHP ,TAGS.DOCKER],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Tamagotchi Isaac",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Mascota Tamagotchi inspirada en el videojuego 'The Binding of Isaac' hecho en React",
+      github: "https://github.com/lucasmaragu/Tamagochi-Isaac",
+    image: "/projects/tboi.png",
+    tags: [TAGS.REACT, TAGS.TAILWIND],
   },
 ]
 ---
@@ -57,7 +70,7 @@ const PROJECTS = [
           {tags.map((tag) => (
             <li>
               <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-3 `}
               >
                 <tag.icon class="size-4" />
                 {tag.name}

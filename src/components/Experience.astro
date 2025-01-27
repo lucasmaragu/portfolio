@@ -1,30 +1,61 @@
 ---
+
+import Tailwind from "./icons/Tailwind.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+import Reacts from './icons/Reacts.astro'
+import Docker from './icons/Docker.astro'
+import Php from './icons/Php.astro'
+import Laravel from './icons/Laravel.astro'
+
 import ExperienceItem from "./ExperienceItem.astro"
+const TAGS = {
+  REACT: {
+    name: "React.js",
+    class: "bg-black text-white",
+    icon: Reacts,
+  },
+  DOCKER: {
+    name: "Docker",
+    class: "bg-[#2796EC] text-white",
+    icon: Docker,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-[#7277AD] text-white",
+    icon: Php,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#1E293B] text-white",
+    icon: Tailwind,
+  },
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-white text-black dark:bg-black dark:text-white ",
+    icon: Laravel,
+  },
+}
 const EXPERIENCE = [
   {
     date: "Actualmente...",
-    title: "Creador de Contenido",
-    company: "Twitch",
+    title: "Desarrollador Fullstack",
+    company: "Avannubo",
     description:
-      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
-    link: "https://twitch.tv/midudev",
+      "Desarrollo de aplicaciones web para empresas clientes. Implementación de soluciones de software a medida, con un enfoque en la experiencia de usuario y la escalabilidad.",
+    tags: [TAGS.LARAVEL, TAGS.TAILWIND, TAGS.DOCKER, ],
   },
-  {
-    date: "Septiembre 2022",
-    title: "Principal Frontend Engineer",
-    company: "Adevinta Spain",
-    description:
-      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
-  },
+  
 ]
+
 ---
 
 <ol class="relative mt-16">
-  {
-    EXPERIENCE.map((experience) => (
-      <li class="">
-        <ExperienceItem {...experience} />
-      </li>
-    ))
-  }
+  {EXPERIENCE.map((experience) => (
+    <li class="mb-8">
+      <ExperienceItem {...experience} />
+     
+      
+    </li>
+  ))}
 </ol>
