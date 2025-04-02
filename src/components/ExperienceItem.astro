@@ -18,26 +18,26 @@ const { title, company, description, link, date, tags } = Astro.props;
 ---
 
 <div
-  class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4"
+  class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-gray-200/70 dark:before:border-gray-700/40 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4"
 >
   <!-- Información fija: Título, empresa y fecha -->
   <div class="relative pb-12 md:col-span-2">
     <div class="sticky top-0">
-      <span class="text-yellow-400 -left-[42px] absolute rounded-full text-5xl">&bull;</span>
-      <h3 class="text-xl font-bold text-yellow-400">{title}</h3>
-      <h4 class="font-semibold text-xl text-gray-600 dark:text-white">{company}</h4>
-      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{date}</time>
+      <span class="text-emerald-500 -left-[42px] absolute rounded-full text-5xl">&bull;</span>
+      <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400">{title}</h3>
+      <h4 class="font-semibold text-xl text-gray-700 dark:text-gray-200">{company}</h4>
+      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-gray-400/80">{date}</time>
     </div>
   </div>
 
   <!-- Descripción y etiquetas -->
   <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
-    <p>{description}</p>
+    <p class="text-pretty">{description}</p>
     {tags && tags.length > 0 && (
       <div class="flex flex-wrap gap-2 mt-4">
         {tags.map((tag) => (
-          <span class={`px-2 flex flex-row gap-x-2 py-1 rounded-full text-sm font-medium ${tag.class}`}>
-            <tag.icon class="inline-block  h-4 mr-1 align-middle" />
+          <span class={`px-2 flex flex-row gap-x-2 py-1 rounded-full text-sm font-medium ${tag.class} transition-transform hover:scale-105`}>
+            <tag.icon class="inline-block h-4 mr-1 align-middle" />
             {tag.name}
           </span>
         ))}

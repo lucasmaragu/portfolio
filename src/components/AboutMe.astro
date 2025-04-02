@@ -1,19 +1,25 @@
 ---
- const personalImageAlt = "Lucas Martínez"
+const personalImageAlt = "Lucas Martínez"
 ---
 
 <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
   <div
-    class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+    class="[&>p]:mb-4 [&>p>strong]:text-emerald-600 dark:[&>p>strong]:text-emerald-400 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
   >
-  <p>¡Hola! Soy Lucas Martínez Aguilera, estudiante de segundo año de Desarrollo de Aplicaciones Web (DAW) 💻. Desde que empecé en este mundo, me apasiona todo lo relacionado con el desarrollo web y disfruto enfrentándome a nuevos desafíos. Cada proyecto que realizo es una oportunidad para crecer y mejorar mis habilidades ⚙️.</p>
+    <p>¡Hola! Soy Lucas Martínez Aguilera, estudiante de segundo año de Desarrollo de Aplicaciones Web (DAW) 💻. Desde que empecé en este mundo, me apasiona todo lo relacionado con el desarrollo web y disfruto enfrentándome a nuevos desafíos. Cada proyecto que realizo es una oportunidad para crecer y mejorar mis habilidades ⚙️.</p>
+    
+    <p>Además, estoy comprometido con mantenerme al día en las tendencias tecnológicas 📊. Creo firmemente que la tecnología tiene el poder de transformar nuestro entorno, y estoy decidido a formar parte de ese cambio ⚡.</p>
+  </div>
 
- 
-  
- <p> Además, estoy comprometido con mantenerme al día en las tendencias tecnológicas 📊. Creo firmemente que la tecnología tiene el poder de transformar nuestro entorno, y estoy decidido a formar parte de ese cambio ⚡.</p>
- </div>
-
-  <img width="200" height="200"   src="/yo.jfif" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 " style="object-position: 50% 50%">
-
+  <div class="order-1 md:order-2 relative">
+    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500 to-blue-500 rounded-2xl blur-xl opacity-30 dark:opacity-40 -z-10 transform rotate-3"></div>
+    <img 
+      width="200" 
+      height="200" 
+      src="/yo.jfif" 
+      alt={personalImageAlt} 
+      class="object-cover w-64 h-full p-1 rotate-3 aspect-square rounded-2xl bg-white dark:bg-gray-800 ring-1 ring-gray-200 dark:ring-gray-700 shadow-lg transition-all duration-300 hover:rotate-0" 
+      style="object-position: 50% 50%"
+    />
+  </div>
 </article>
-
