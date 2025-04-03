@@ -43,11 +43,13 @@ const TAGS = {
 }
 const EXPERIENCE = [
   {
-    date: "Octubre 2024 - Marzo 2025",
-    title: "Desarrollador Fullstack",
+    date: "October 2024 - March 2025",
+    dateEs: "Octubre 2024 - Marzo 2025",
+    title: "Fullstack Developer",
+    titleEs: "Desarrollador Fullstack",
     company: "Avannubo",
-    description:
-      "Desarrollo de aplicaciones web para empresas clientes. Implementación de soluciones de software a medida, con un enfoque en la experiencia de usuario y la escalabilidad.",
+    description: "Development of web applications for client companies. Implementation of custom software solutions, with a focus on user experience and scalability.",
+    descriptionEs: "Desarrollo de aplicaciones web para empresas clientes. Implementación de soluciones de software a medida, con un enfoque en la experiencia de usuario y la escalabilidad.",
     tags: [TAGS.LARAVEL, TAGS.VUE, TAGS.TAILWIND, TAGS.DOCKER, ],
   },
 ]
@@ -61,13 +63,23 @@ const EXPERIENCE = [
 
   <div class="space-y-12">
     <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-8 flex items-center">
-      <span class="bg-gradient-to-r from-purple-600 to-violet-500 bg-clip-text text-transparent">Experiencia Profesional</span>
+      <span class="bg-gradient-to-r from-purple-600 to-violet-500 bg-clip-text text-transparent lang-es">Experiencia Profesional</span>
+      <span class="bg-gradient-to-r from-purple-600 to-violet-500 bg-clip-text text-transparent lang-en">Professional Experience</span>
       <div class="h-px flex-grow bg-gradient-to-r from-purple-600 to-transparent ml-4"></div>
     </h2>
     
     <div class="space-y-8">
       {EXPERIENCE.map((experience) => (
-        <ExperienceItem {...experience} />
+        <ExperienceItem 
+          title={experience.title} 
+          titleEs={experience.titleEs} 
+          company={experience.company} 
+          description={experience.description} 
+          descriptionEs={experience.descriptionEs} 
+          date={experience.date} 
+          dateEs={experience.dateEs} 
+          tags={experience.tags} 
+        />
       ))}
     </div>
   </div>

@@ -1,5 +1,5 @@
 ---
-import GitHub from "./icons/GitHub.astro"
+import GitHub from "@/components/icons/GitHub.astro"
 import Vue from "./icons/Vue.astro"
 import Angular from "./icons/Angular.astro"
 import NextJS from "./icons/NextJS.astro"
@@ -65,9 +65,8 @@ const TAGS = {
 const PROJECTS = [
   {
     title: "Alumni Monlau",
-    description:
-      "Plataforma oficial para exalumnos de Monlau con Laravel, Vue3 y Tailwind CSS. Permite gestionar perfiles, publicar ofertas y eventos, e incluye un flujo de despliegue automatizado con Plesk y Git.",
-    
+    description: "Official platform for Monlau alumni built with Laravel, Vue3, and Tailwind CSS. Allows profile management, posting offers and events, and includes an automated deployment flow with Plesk and Git.",
+    descriptionEs: "Plataforma oficial para exalumnos de Monlau con Laravel, Vue3 y Tailwind CSS. Permite gestionar perfiles, publicar ofertas y eventos, e incluye un flujo de despliegue automatizado con Plesk y Git.",
     github: "https://github.com/MonlauAlumni/produccion",
     link: "https://alumni.alumnes-monlau.com/",
     image: "/projects/alumni.png",
@@ -75,26 +74,26 @@ const PROJECTS = [
   },
   {
     title: "Nike Clone",
-    description:
-      "Plataforma de gestión para Nike con Angular y Express. Permite a los usuarios registrarse, iniciar sesión y subir productos, con un backend en Express y una interfaz dinámica en Angular.",
-      github: "https://github.com/lucasmaragu/Tamagochi-Isaac",
+    description: "Management platform for Nike with Angular and Express. Allows users to register, log in, and upload products, with an Express backend and a dynamic Angular interface.",
+    descriptionEs: "Plataforma de gestión para Nike con Angular y Express. Permite a los usuarios registrarse, iniciar sesión y subir productos, con un backend en Express y una interfaz dinámica en Angular.",
+    github: "https://github.com/lucasmaragu/nike-clone",
     image: "/projects/nike.png",
     tags: [TAGS.ANGULAR, TAGS.EXPRESS, TAGS.JWT, TAGS.TAILWIND],
   },
   {
-   title: "Project Management",
-    description:
-    "Aplicación multicliente de gestión de proyectos con Laravel, Vue, InertiaJS y Tailwind CSS. Gestiona organizaciones, departamentos y empleados, permitiendo la creación y asignación de proyectos y tareas, asignación de horas y generación de tanto informes como documentación tipo MarkDown.",
-     image: "/projects/project-management.png",
-     tags: [TAGS.LARAVEL, TAGS.VUE, TAGS.TAILWIND],
-     github: "https://github.com/lucasmaragu/project-management",
-   }
+    title: "Project Management",
+    description: "Dockerized multi-client project management application with Laravel, Vue, InertiaJS, and Tailwind CSS. Manages organizations, departments, and employees, allowing the creation and assignment of projects and tasks, hour allocation, and generation of both reports and MarkDown documentation.",
+    descriptionEs: "Aplicación multicliente dockerizada de gestión de proyectos con Laravel, Vue, InertiaJS y Tailwind CSS. Gestiona organizaciones, departamentos y empleados, permitiendo la creación y asignación de proyectos y tareas, asignación de horas y generación de tanto informes como documentación tipo MarkDown.",
+    image: "/projects/project-management.png",
+    github: "https://github.com/lucasmaragu/project-management",
+    tags: [TAGS.LARAVEL, TAGS.VUE, TAGS.DOCKER, TAGS.TAILWIND],
+  }
 ]
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, title, description, descriptionEs, tags, link, github }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-200 dark:lg:border-gray-800 lg:hover:border-gray-300 dark:lg:hover:border-gray-700 lg:hover:bg-gray-100/50 dark:lg:hover:bg-gray-800/50">
@@ -120,18 +119,23 @@ const PROJECTS = [
           ))}
         </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <div class="mt-2 text-gray-700 dark:text-gray-400">
+        <span class="lang-es">{descriptionEs}</span>
+        <span class="lang-en">{description}</span>
+      </div>
       <footer class="flex items-end justify-start mt-4 gap-x-4">
           {github && (
             <LinkButton href={github}>
               <GitHub class="size-6" />
-              Code
+              <span class="lang-es">Código</span>
+              <span class="lang-en">Code</span>
             </LinkButton>
           )}
           {link && (
             <LinkButton href={link}>
               <Link class="size-4" />
-              Preview
+              <span class="lang-es">Vista previa</span>
+              <span class="lang-en">Preview</span>
             </LinkButton>
           )}
         </footer>
@@ -140,8 +144,11 @@ const PROJECTS = [
 </article>
     ))
   }
-  <div class="flex justify-center flex-col items-center gap-y-4 mt-16">
-    <h1 class="text-xl font-bold text-purple-600 dark:text-purple-400">Puedes encontrar más proyectos en mi Github!</h1>
+  <div class="flex justify-center flex-col items-center gap-y-4 ">
+    <h1 class="text-xl font-bold text-purple-600 dark:text-purple-400">
+      <span class="lang-es">Puedes encontrar más proyectos en mi Github!</span>
+      <span class="lang-en">You can find more projects on my Github!</span>
+    </h1>
     <a href="https://github.com/lucasmaragu" target="_blank" rel="noopener noreferrer" class="text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
       <GitHub class="size-8" />
     </a>

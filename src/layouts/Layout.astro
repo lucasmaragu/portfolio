@@ -8,20 +8,43 @@ import { ViewTransitions } from "astro:transitions"
 interface Props {
   title: string
   description: string
+  ogImage?: string
 }
 
-const { description, title } = Astro.props
+const { description, title, ogImage } = Astro.props
+
+
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Meta para redes sociales (Open Graph) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:url" content={Astro.site} />
+    
+    <!-- Meta de Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+    <!-- Meta para la optimización SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Lucas Martínez Aguilera"/>
+    
+    <!-- Definir el título de la página -->
     <title>{title}</title>
+    
     <ViewTransitions />
   </head>
 
@@ -110,7 +133,53 @@ const { description, title } = Astro.props
           }
         }
       }
+      
+      /* Language switching styles */
+      .lang-es {
+        display: none;
+      }
+      
+      .lang-en {
+        display: none;
+      }
+      
+      html.english .lang-en {
+        display: block;
+      }
+      
+      html.spanish .lang-es {
+        display: block;
+      }
+      
+      /* For inline elements */
+      html.english span.lang-en,
+      html.english a.lang-en {
+        display: inline;
+      }
+      
+      html.spanish span.lang-es,
+      html.spanish a.lang-es {
+        display: inline;
+      }
+      
+      /* For flex elements */
+      html.english .lang-en-flex {
+        display: flex;
+      }
+      
+      html.spanish .lang-es-flex {
+        display: flex;
+      }
     </style>
+    
+    <script is:inline>
+      // Initialize language on page load
+      document.addEventListener('astro:page-load', () => {
+        const language = localStorage.getItem('language') || 'Español';
+        document.documentElement.classList.remove('english', 'spanish');
+        document.documentElement.classList.add(language === 'English' ? 'english' : 'spanish');
+      });
+    </script>
   </body>
 </html>
 

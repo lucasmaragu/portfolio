@@ -1,25 +1,30 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro"
+import LanguageToggle from "./LanguageToggle.astro"
 
 const navItems = [
   
   {
-    title: "Proyectos",
+    titleEn: "Projects",
+    titleEs: "Proyectos",
     label: "proyectos",
     url: "/#proyectos",
   },
   {
-    title: "Experiencia",
+    titleEn: "Experience",
+    titleEs: "Experiencia",
     label: "experiencia",
     url: "/#experiencia",
   },
   {
-    title: "Sobre mí",
+    titleEn: "About",
+    titleEs: "Sobre mí",
     label: "sobre-mi",
     url: "/#sobre-mi",
   },
   {
-    title: "Contacto",
+    titleEn: "Contact",
+    titleEs: "Contacto",
     label: "contacto",
     url: "mailto:lucasmaragu@gmail.com",
   },
@@ -39,11 +44,15 @@ const navItems = [
           aria-label={link.label}
           href={link.url}
         >
-          {link.title}
+          <span class="lang-es">{link.titleEs}</span>
+          <span class="lang-en">{link.titleEn}</span>
         </a>
       ))
     }
-    <ThemeToggle />
+    <div class="flex items-center gap-2">
+      <LanguageToggle />
+      <ThemeToggle />
+    </div>
   </nav>
 </header>
 

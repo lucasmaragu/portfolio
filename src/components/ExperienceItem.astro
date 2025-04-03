@@ -3,10 +3,13 @@ import LinkInline from "./LinkInline.astro";
 
 interface Props {
   title: string;
+  titleEs: string;
   company: string;
   description: string;
+  descriptionEs: string;
   link?: string;
   date: string;
+  dateEs: string;
   tags: {
     name: string;
     class: string;
@@ -14,7 +17,7 @@ interface Props {
   }[];
 }
 
-const { title, company, description, link, date, tags } = Astro.props;
+const { title, titleEs, company, description, descriptionEs, link, date, dateEs, tags } = Astro.props;
 ---
 
 <div
@@ -24,26 +27,33 @@ const { title, company, description, link, date, tags } = Astro.props;
   <div class="relative pb-12 md:col-span-2">
     <div class="sticky top-0">
       <span class="text-purple-500 -left-[42px] absolute rounded-full text-5xl">&bull;</span>
-      <h3 class="text-xl font-bold text-purple-600 dark:text-purple-400">{title}</h3>
+      <h3 class="text-xl font-bold text-purple-600 dark:text-purple-400">
+        <span class="lang-es">{titleEs}</span>
+        <span class="lang-en">{title}</span>
+      </h3>
       <h4 class="font-semibold text-xl text-gray-700 dark:text-gray-200">{company}</h4>
-      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-gray-400/80">{date}</time>
+      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-gray-400/80">
+        <span class="lang-es">{dateEs}</span>
+        <span class="lang-en">{date}</span>
+      </time>
     </div>
   </div>
 
   <!-- Descripción y etiquetas -->
   <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
-    <p class="text-pretty">{description}</p>
+    <p class="text-pretty lang-es">{descriptionEs}</p>
+    <p class="text-pretty lang-en">{description}</p>
     {tags && tags.length > 0 && (
       <div class="flex flex-wrap gap-2 mt-4">
         {tags.map((tag) => (
-            <li class="flex items-center gap-x-2">
+          
               <span
                 class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-3 transition-transform hover:scale-105`}
               >
                 <tag.icon class="size-4" />
                 {tag.name}
               </span>
-            </li>
+         
           ))}
       </div>
     )}
