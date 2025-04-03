@@ -81,13 +81,14 @@ const PROJECTS = [
     image: "/projects/nike.png",
     tags: [TAGS.ANGULAR, TAGS.EXPRESS, TAGS.JWT, TAGS.TAILWIND],
   },
-  // {
-  //   title: "Project Management",
-  //   description:
-  //     "Aplicación de gestión de proyectos con React y Tailwind CSS. Permite a los usuarios crear, editar y eliminar proyectos, tareas y comentarios, con un diseño responsivo y moderno.",
-  //   image: "/projects/project-management.png",
-  //   tags: [TAGS.REACT, TAGS.TAILWIND],
-  // }
+  {
+   title: "Project Management",
+    description:
+    "Aplicación multicliente de gestión de proyectos con Laravel, Vue, InertiaJS y Tailwind CSS. Gestiona organizaciones, departamentos y empleados, permitiendo la creación y asignación de proyectos y tareas, asignación de horas y generación de tanto informes como documentación tipo MarkDown.",
+     image: "/projects/project-management.png",
+     tags: [TAGS.LARAVEL, TAGS.VUE, TAGS.TAILWIND],
+     github: "https://github.com/lucasmaragu/project-management",
+   }
 ]
 ---
 
@@ -140,9 +141,10 @@ const PROJECTS = [
     ))
   }
   <div class="flex justify-center flex-col items-center gap-y-4 mt-16">
-    <h1 class="text-xl font-bold text-emerald-600 dark:text-emerald-400">Puedes encontrar más proyectos en mi Github!</h1>
-    <a href="https://github.com/lucasmaragu" target="_blank" rel="noopener noreferrer" class="text-gray-800 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+    <h1 class="text-xl font-bold text-purple-600 dark:text-purple-400">Puedes encontrar más proyectos en mi Github!</h1>
+    <a href="https://github.com/lucasmaragu" target="_blank" rel="noopener noreferrer" class="text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
       <GitHub class="size-8" />
     </a>
   </div>
 </div>
+

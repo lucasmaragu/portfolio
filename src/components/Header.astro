@@ -2,15 +2,16 @@
 import ThemeToggle from "./ThemeToggle.astro"
 
 const navItems = [
-  {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
-  },
+  
   {
     title: "Proyectos",
     label: "proyectos",
     url: "/#proyectos",
+  },
+  {
+    title: "Experiencia",
+    label: "experiencia",
+    url: "/#experiencia",
   },
   {
     title: "Sobre mí",
@@ -34,7 +35,7 @@ const navItems = [
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-emerald-500 dark:hover:text-emerald-400"
+          class="relative block px-2 py-2 transition hover:text-purple-500 dark:hover:text-purple-400"
           aria-label={link.label}
           href={link.url}
         >
@@ -56,9 +57,9 @@ const navItems = [
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-emerald-500", "dark:text-emerald-400")
+              item.classList.add("text-purple-500", "dark:text-purple-400")
             } else {
-              item.classList.remove("text-emerald-500", "dark:text-emerald-400")
+              item.classList.remove("text-purple-500", "dark:text-purple-400")
             }
           })
         }
@@ -108,3 +109,4 @@ const navItems = [
     }
   }
 </style>
+
