@@ -8,6 +8,7 @@ import AboutMe from "@/components/AboutMe.astro"
 import Briefcase from "@/components/icons/Briefcase.astro"
 import CodeIcon from "@/components/icons/Code.astro"
 import Experience from "@/components/Experience.astro"
+import Education from "@/components/Education.astro"
 import ProfileCheck from "@/components/icons/ProfileCheck.astro"
 import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
@@ -45,6 +46,14 @@ const ogImage = "https://lucasmaragu.vercel.app/imagen-destacada.png"
         <Experience />
       </SectionContainer>
 
+      <SectionContainer id="educacion">
+        <TitleSection>
+          <Briefcase class="size-8" />
+          Educación
+        </TitleSection>
+        <Education />
+      </SectionContainer>
+
       <SectionContainer id="sobre-mi">
         <TitleSection>
           <ProfileCheck class="size-8" />
@@ -52,6 +61,8 @@ const ogImage = "https://lucasmaragu.vercel.app/imagen-destacada.png"
         </TitleSection>
         <AboutMe />
       </SectionContainer>
+
+      
     </div>
   </main>
 </Layout>
